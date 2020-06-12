@@ -6,11 +6,11 @@
 
  3. start genach , start node(i.e 'nodemon server')
  
- 4. goto URL -->http//:localhost:3000/login ( username --> <b>'addmin' </b> , password --> <b>'adme' </b>) to authorise voters
+ 4. goto URL -->http//:localhost:3000/login ( username --> <b>'addmin' </b> , password --> <b>'adme' </b>) to authorise voters 
    
    /** username and password are chngable**/
  
- 5. goto URL -->http//:localhost:3000/ and vote
+ 5. goto URL -->http//:localhost:3000/ and vote (<b> voter id is Etherium account address used for authorisation</b>)
  
  
  
