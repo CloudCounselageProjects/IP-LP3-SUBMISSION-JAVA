@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"  crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-amber.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>De-Voting System</title>
+  </head>
+  <body>
+    
+    <div class="w3-container-filled">
+      <div class="w3-bar w3-card-4 w3-theme" style="height:60px;">
+          <div class="w3-bar-item w3-left w3-padding-small"><h3><a href="/">De-voting</a> </h3> </div> 
+          <div class="w3-bar-item w3-right w3-padding-large ">
+              <div class="w3-bar ">
+                  <a class="w3-button w3-round-xlarge w3-hover-khaki" href="/results">Result</a> 
+                  <button class="w3-button w3-round-xlarge w3-hover-khaki">About us</button>  
+              </div> 
+          </div>
+      </div>
+  </div>
+  <br>
+  <!-- other navbar -->
+      <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">De-Voting</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <a class="nav-link" href="/results" style="color: aliceblue;">Results<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#" style="color: aliceblue;">About Us</a>
+        </div>
+      </nav> -->
+
+      <div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin-top: -23px;">
+        <strong>Welcome! To Election     </strong>   You can vote to make a change in our society
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    
+<!-- Nav Bar finished -->
+    <div class="container">
+        <div class="row justify-content-around eventName" >
+          <h2 id="event" class="ele">Election</h2>
+        </div>
+        <br>
+        
+        <div class=" row table-responsive nice" id = "Ctable" style="margin-left: 300px">
+          <table class=" col-5 table table-bordered table-warning">
+              <thead>
+                <tr >
+                  <th style="padding-left: 90px;" scope="col" >Name </th>
+                  <th style="padding-left: 90px;" scope="col" >Party</th >
+                </tr>
+              </thead>
+              <tbody id="putcandidates" >
+               
+              </tbody>
+              
+          </table>    
+        </div>
+
+      <div class="row justify-content-center">
+        
+          <form   id = "candidateSelection" >
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="badge badge-warning" style="padding: 11px  10px; font-size:14px;" for="inputGroupSelect01" disabled>VoterID</label>
+              </div>
+              <input type="text" class="form-control" placeholder="Please Enter Your ID "  id="votingADDR">
+            </div>
+            <div class="input-group ">
+              <div class="input-group-prepend">
+                <label class="badge badge-warning" style="padding: 11px  10px; font-size: 14px;" for="inputGroupSelect01" disabled>Options</label>
+              </div>
+              <select class="custom-select" id="inputGroupSelect01" >
+                  
+              </select>
+            </div>
+
+            <br>
+            <input class="btn btn-warning" type="submit" id="sub" style="margin-left: 80px;" >
+          </form>
+      </div>
+    </div> 
+  
+    <script>
+
+          document.addEventListener('DOMContentLoaded', () => {
+            const forms = document.forms['candidateSelection'];
+              forms.addEventListener('submit', function(e){
+                e.preventDefault();
+                const id=document.getElementById('inputGroupSelect01').value;
+                const addr =document.getElementById('votingADDR').value;
+                var URL = "http://localhost:3000/results?SelectedID=" + id+ "&VotAdd="+ addr ;
+                console.log(URL , id , addr);
+                window.location = URL;
+              
+               })
+          });
+
+    </script>
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"  crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"  crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+    <!-- <script src="server.js"></script> -->
+</body>
+</html>
