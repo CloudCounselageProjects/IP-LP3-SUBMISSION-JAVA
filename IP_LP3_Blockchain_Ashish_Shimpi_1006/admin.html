@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Admins Console</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+      <a class="navbar-brand" href="/">De-Voting</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <a class="nav-link" href="/results" style="color: aliceblue;">Results<span class="sr-only">(current)</span></a>
+      
+      </div>
+    
+    </nav>
+    <div class="alert  alert-success alert-dismissible fade show" a role="alert">
+   <strong>   Welcome to Admins Panel </strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-4 overflow-auto" id = "Ctable">
+          <table class="table table-bordered  table-active">
+            <thead>
+              <tr>
+                <th>Name</th> 
+                <th>Party</th>
+              </tr>
+            </thead>
+            <tbody id ="putcandidates">
+              
+            </tbody>
+          </table>
+        </div>
+        <div class="col-4"id="Vtable">
+          <table class="table table-bordered table-active">
+            <thead  >
+              <tr>
+                <th>name</th> 
+                <th>VoterID</th>
+              </tr>
+            </thead>
+            <tbody id="putvoters" >
+              
+            </tbody>
+          </table>
+
+        </div>
+        
+      </div>
+      <br>
+      <!-- <input type="text" class="form-control" placeholder="Please Enter Your ID "  id="votingNAME"> -->
+
+      <div class="row justify-content-center">
+        <div class="col-6 ">
+          <form   id = "voterSelection" >
+            <div class="input-group ">
+              <div class="input-group-prepend">
+                <label class="badge badge-dark" style="padding: 12px  12px; font-size:small;" for="inputGroupSelect01" disabled>Voter's Name</label>
+              </div>
+              <input type="text" class="form-control"   id="votingNAME">
+            </div>
+  
+            
+            <div class="input-group ">
+              <div class="input-group-prepend">
+                <label class="badge badge-dark" style="padding: 12px  12px; font-size:small;" for="inputGroupSelect01" disabled>Address</label>
+              </div>
+             <input type="text" class="form-control" id="inputGroupSelect01" placeholder="Etherium Account Address">
+            </div>
+  
+            <br>
+            <button class="btn btn-dark" type="submit" name="" id="sub" style="justify-content: center;">Authorise</button>
+          </form>
+        </div>
+      </div> 
+    
+    </div>
+
+    <script>
+
+      document.addEventListener('DOMContentLoaded', () => {
+        var FormPointer = document.forms['voterSelection']
+        FormPointer.addEventListener('submit',function(event){
+          event.preventDefault()
+          var name = document.querySelector('#voterSelection #votingNAME').value
+          var addr = document.querySelector('#voterSelection #inputGroupSelect01').value
+          var URL = "http://localhost:3000/admin/authorise?name="+ name + "&addr="+ addr;
+          // var URL = "http://localhost:5500/admin.html?name="+ name + "&addr="+ addr;
+          
+          console.log(URL , name, addr)
+          window.location = URL;
+
+
+        })
+      })  
+
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
+
