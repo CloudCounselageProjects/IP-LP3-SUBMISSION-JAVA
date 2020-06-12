@@ -1,4 +1,4 @@
-DE-voting  -  A Blockchain based voting system
+<h1>DE-voting  -  A Blockchain based voting system</h1>
 
   1. install  truffle &  Genach(GUI or CLI) through npm
 
@@ -6,8 +6,9 @@ DE-voting  -  A Blockchain based voting system
 
  3. start genach , start node(i.e 'nodemon server')
  
- 4. goto URL -->http//:localhost:3000/login ( username --> 'addmin' , password --> 'adme' ) to authorise voters
-   /** username nd password are chngable**/
+ 4. goto URL -->http//:localhost:3000/login ( username --> <b>'addmin' </b> , password --> <b>'adme' </b>) to authorise voters
+   
+   /** username and password are chngable**/
  
  5. goto URL -->http//:localhost:3000/ and vote
  
