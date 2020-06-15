@@ -1,0 +1,33 @@
+{
+  "name": "online-decntralized-election",
+  "version": "1.0.0",
+  "description": "A simple DApp for a voting system",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alert": "^4.1.1",
+    "alert-node": "^3.0.11",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-dom": "^5.13.2",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.1",
+    "js-alert": "^1.0.4",
+    "jsdom": "^16.2.2",
+    "popups": "^1.1.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "truffle-contract": "^4.0.31",
+    "web3": "^1.2.7",
+    "webkitgtk": "^4.11.1"
+  }
+}
